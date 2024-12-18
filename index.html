@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page</title>
+    <style>
+        /* Body Style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Light Gray Background */
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        h1 {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* Note Box */
+        .note {
+            background-color: #fff3cd; /* Light Yellow */
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 500px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Download Buttons */
+        .download-buttons {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 12px 24px;
+            margin: 10px;
+            background-color: #007BFF; /* Blue Buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker Blue */
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+    <script>
+        let redirected = false; // To check if the user was redirected
+
+        function handleDownload(link) {
+            if (!redirected) {
+                redirected = true;
+                alert("Redirecting to an ad. Please return and click the download button again.");
+                window.location.href = "https://example.com/ad"; // Replace with your ad URL
+            } else {
+                window.location.href = link; // Actual download link
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <h1>Download Section</h1>
+
+    <!-- Note Box -->
+    <p class="note">
+        Please note: The first time you click the button, you will be redirected. Return to this page and click again to download.
+    </p>
+
+    <!-- Download Buttons -->
+    <div class="download-buttons">
+        <button onclick="handleDownload('file1.zip')">Download File 1</button>
+        <button onclick="handleDownload('file2.zip')">Download File 2</button>
+        <button onclick="handleDownload('file3.zip')">Download File 3</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Your Website. All Rights Reserved.
+    </footer>
+</body>
+</html>
